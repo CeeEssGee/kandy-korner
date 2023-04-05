@@ -1,38 +1,25 @@
-import { useEffect } from "react";
-import { Outlet, Route, Routes } from "react-router-dom";
-import { LocationList } from "../locations/LocationList";
-import { ProductList } from "../products/ProductsList";
+import { EmployeeViews } from "./EmployeeViews"
+import { CustomerViews } from "./CustomerViews"
 
 export const ApplicationViews = () => {
-    return (
-        <Routes>
-            <Route path="/" element={
-                <>
-                    <h1 className="title--main">Kandy Korner Shoppe</h1>
-                    <div>Sweets for All</div>
 
-                    <Outlet />
-                </>
-            }>
-                <Route path="locations" element={ <LocationList /> } />
-				<Route path="products" element={ <ProductList /> } />
 
-                {/* had to let this LocationForm autocomplete in order to work */}
-                {/* <Route path="location/create" element={ <LocationForm /> } /> */}
+     // get the user object out of local storage
+     const localKandyUser = localStorage.getItem("kandy_user") 
+     const kandyUserObject = JSON.parse(localKandyUser) 
 
-            </Route>
+     if (kandyUserObject) {
+        // return employee views
+        return <EmployeeViews />
+     } else {
+        // return customer views
+        return <CustomerViews />
+        
+     }
 
-        </Routes>
-    )
+    
 }
 
 
 
-
-
-// export const ApplicationViews = () => {
-// 	return <>
-
-// 	</>
-// }
 

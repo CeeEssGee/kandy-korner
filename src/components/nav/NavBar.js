@@ -1,43 +1,65 @@
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
 
-// export const NavBar = () => {
-//     const navigate = useNavigate()
-
-//     return (
-//         <ul className="navbar">
-//             <li className="navbar__item navbar__logout">
-//                 <Link className="navbar__link" to="" onClick={() => {
-//                     localStorage.removeItem("kandy_user")
-//                     navigate("/", {replace: true})
-//                 }}>Logout</Link>
-//             </li>
-//         </ul>
-//     )
-// }
-
 export const NavBar = () => {
     const navigate = useNavigate()
 
-    return (
-        <ul className="navbar">
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/locations">Locations</Link>
+        // get the user object out of local storage
+        const localKandyUser = localStorage.getItem("kandy_user") 
+        const kandyUserObject = JSON.parse(localKandyUser) 
+
+    return <>
+    
+    {
+        kandyUserObject.staff ?
+        <>
+
+    <ul className="navbar">
+        <li className="navbar__item active">
+            <Link className="navbar__link" to="/locations">Locations</Link>
+        </li>
+        <li className="navbar__item active">
+            <Link className="navbar__link" to="/products">Products</Link>
+        </li>
+        {
+            localStorage.getItem("kandy_user")
+                ? <li className="navbar__item navbar__logout">
+                    <Link className="navbar__link" to="" onClick={() => {
+                        localStorage.removeItem("kandy_user")
+                        navigate("/", {replace: true})
+                    }}>Logout</Link>
+                </li>
+                : ""
+        }
+        
+    </ul>
+
+</>
+:
+<>
+
+<ul className="navbar">
+    <li className="navbar__item active">
+        <Link className="navbar__link" to="/locations">Locations</Link>
+    </li>
+
+    {
+        localStorage.getItem("kandy_user")
+            ? <li className="navbar__item navbar__logout">
+                <Link className="navbar__link" to="" onClick={() => {
+                    localStorage.removeItem("kandy_user")
+                    navigate("/", {replace: true})
+                }}>Logout</Link>
             </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/products">Products</Link>
-            </li>
-            {
-                localStorage.getItem("kandy_user")
-                    ? <li className="navbar__item navbar__logout">
-                        <Link className="navbar__link" to="" onClick={() => {
-                            localStorage.removeItem("kandy_user")
-                            navigate("/", {replace: true})
-                        }}>Logout</Link>
-                    </li>
-                    : ""
-            }
-            
-        </ul>
-    )
+            : ""
+    }
+    
+</ul>
+
+</>
+    }
+    
+    
+    
+    </>
 }
