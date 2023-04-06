@@ -26,6 +26,20 @@ export const ProductForm = () => {
         []
     )
 
+    const [locations, setLocations] = useState([])
+
+    useEffect(
+    () => {
+        fetch(`http://localhost:8088/locations`) 
+        .then(response => response.json())
+        .then((locationArray) => {
+            setLocations(locationArray)
+        })
+    
+    },
+    [] 
+    )
+
     // const localKandyUser = localStorage.getItem("kandy_user")
     // const kandyUserObject = JSON.parse(localKandyUser)
 
@@ -37,13 +51,13 @@ export const ProductForm = () => {
             name: product.name, // get the product name from the input data
             productTypeId: product.productTypeId, // get the productTypeId from the input data -- how do I make this a drop-down?
             pricePerUnit: product.pricePerUnit, // get the pricePerUnit from the input data
-            // locationId: 1 // leave this blank -- do I need this?
+            locationId: product.locationId
             // JSON will add an id for us
 
         }
 
         // Fetch just the product list - because that is where we are posting our new products?
-    return fetch(`http://localhost:8088/products?_expand=productType`, {
+    return fetch(`http://localhost:8088/products?_expand=productType&_expand=location`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -62,6 +76,8 @@ export const ProductForm = () => {
         <>
         <form className="productForm">
             <h2 className="productForm__title">New Product Form</h2>
+            
+            {/* product name fieldset */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="product-name">Product Name</label>
@@ -82,7 +98,9 @@ export const ProductForm = () => {
                         }
                     } />
                 </div>
-            </fieldset>            
+            </fieldset>   
+
+            {/* product price fieldset          */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="product-price">Product Price:</label>
@@ -104,6 +122,8 @@ export const ProductForm = () => {
                         } />
                 </div>
             </fieldset>
+
+            {/* product type fieldset */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="product-type">Product Type:</label>
@@ -125,6 +145,35 @@ export const ProductForm = () => {
                                     return ( 
                                 <option key={type.id} value={type.id}>
                                     {type.category}
+                                </option>
+                            ) 
+                        })}
+                        </select>
+                </div>
+            </fieldset>
+            
+            {/* locationId fieldset */}
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="location">Store Location:</label>
+                    <select
+                        onChange={
+                            (evt) => {
+                                // first, we need to copy the existing state, this uses the shorthand for copying an object
+                                const copy = { ...product }
+                                // modify the copy with new value of emergency from the change event, evt.target.checked = if checked, true / not, false
+                                copy.locationId = parseInt(evt.target.value)
+                                // now that we've captured the input, we need to update the state
+                                update(copy)
+                            }
+                        } >
+                        <option key={0}>Choose which location</option>
+                        {
+                            locations.map(
+                                (location) => {
+                                    return ( 
+                                <option key={location.id} value={location.id}>
+                                    {location.name}
                                 </option>
                             ) 
                         })}
