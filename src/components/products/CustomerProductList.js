@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Products.css"
+import { CustomerProduct } from "./CustomerProduct"
 
 
 export const CustomerProductList = ({ searchTermState }) => {
@@ -61,20 +62,10 @@ export const CustomerProductList = ({ searchTermState }) => {
             
             <article className="productArticle">
                 {
-                    filteredProducts.map(
-                        (product) => {
-                            return <section key={product.id} className="productSection">
-                                <header>{product.name}</header>
-                                <div>Price: {product.pricePerUnit.toLocaleString("en-US", { style: "currency", currency: "USD" })}</div>                                
-                                <footer>
-                                    <Link to={`/products/${product.id}`}>Show me where</Link>
-                                    </footer>
-
-                                {/* <div>Location: {product.location.name}</div> */}
-                                {/* <div>Address: {product.location.address}</div> */}
-                            </section>
-                        }
-                        )
+                    filteredProducts.map(product => <CustomerProduct key={`product--${product.id}`}
+                        id={product.id} 
+                        name={product.name} 
+                        pricePerUnit={product.pricePerUnit} />)
                     }
             </article>
         

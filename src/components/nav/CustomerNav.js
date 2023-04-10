@@ -14,7 +14,7 @@ export const CustomerNav = () => {
         <Link className="navbar__link" to="/locations">Locations</Link>
     </li>
     <li className="navbar__item active">
-        <Link className="navbar__link" to="/products-customer">Find Candy</Link>
+        <Link className="navbar__link" to="/customer-products">Find Candy</Link>
     </li>
 
     {
