@@ -1,10 +1,15 @@
-export const CustomerProduct = ({}) => {
-    return <section key={product.id} className="productSection">
-                                <header>{product.name}</header>
-                                <div>Price: {product.pricePerUnit.toLocaleString("en-US", { style: "currency", currency: "USD" })}</div>                                
-                                <footer>Show me where</footer>
+import { Link } from "react-router-dom"
+// child of CustomerProductList
 
-                                {/* <div>Location: {product.location.name}</div> */}
-                                {/* <div>Address: {product.location.address}</div> */}
-                            </section>
+export const CustomerProduct = ({ id, name, pricePerUnit }) => {
+    return <section className="productSection">
+    <header>{name}</header>
+    <div>Price: {pricePerUnit.toLocaleString("en-US", { style: "currency", currency: "USD" })}</div>                                
+    <footer>
+        <Link to={`/products/${id}`}>Show me where</Link>
+        </footer>
+
+    {/* <div>Location: {product.location.name}</div> */}
+    {/* <div>Address: {product.location.address}</div> */}
+</section>
 }
