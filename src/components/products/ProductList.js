@@ -29,7 +29,9 @@ export const ProductList = () => {
         [products]
     )
     
+
     
+
     useEffect(
         () =>{
             // console.log("Initial State of Products", products)
@@ -77,7 +79,7 @@ export const ProductList = () => {
                         (product) => {
                             return <section key={product.id} className="productSection">
                                 <header>{product.name}</header>
-                                <div>{product.pricePerUnit}</div>
+                                <div>{product.pricePerUnit.toLocaleString("en-US", { style: "currency", currency: "USD" })}</div>
                                 <div>{product.productType.category}</div>
                             </section>
                         }

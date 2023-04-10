@@ -4,3 +4,7 @@
     border: 5px, black, solid;
     padding: 10px;
 }
+
+.customerProductSearch {
+    width: 300px;
+}

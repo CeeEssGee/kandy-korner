@@ -1,7 +1,7 @@
 import { Outlet, Route, Routes } from "react-router-dom";
 import { LocationList } from "../locations/LocationList";
-import { ProductList } from "../products/ProductsList";
 import { ProductForm } from "../products/ProductForm"
+import { ProductList } from "../products/ProductList";
 
 export const EmployeeViews = () => {
     return (
