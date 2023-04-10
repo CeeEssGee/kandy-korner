@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "./Products.css"
 import { CustomerProduct } from "./CustomerProduct"
 
@@ -7,7 +7,7 @@ import { CustomerProduct } from "./CustomerProduct"
 export const CustomerProductList = ({ searchTermState }) => {
     
     // reassign useNavigate() hook to navigate to be used later
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     // initial array of products
     const [products, setProducts] = useState([])
