@@ -4,6 +4,8 @@ import { ProductForm } from "../products/ProductForm"
 import { ProductList } from "../products/ProductList";
 import { NewEmployeeForm } from "../employees/NewEmployeeForm";
 import { EmployeeList } from "../employees/EmployeeList";
+import { CustomerList } from "../customers/CustomerList";
+import { CustomerDetails } from "../customers/CustomerDetails";
 
 export const EmployeeViews = () => {
     return (
@@ -22,6 +24,10 @@ export const EmployeeViews = () => {
 
                 <Route path="employees" element={ <EmployeeList /> } />
                 <Route path="employee/create" element={ <NewEmployeeForm /> } />
+
+                <Route path="customers" element={ <CustomerList /> } />
+                <Route path="customers/:customerId" element={ <CustomerDetails /> } />
+
                 
 
             </Route>
