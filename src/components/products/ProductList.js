@@ -9,8 +9,8 @@ export const ProductList = () => {
     const navigate = useNavigate()
 
     // get the user object out of local storage
-    const localKandyUser = localStorage.getItem("kandy_user") 
-    const kandyUserObject = JSON.parse(localKandyUser) 
+    // const localKandyUser = localStorage.getItem("kandy_user") 
+    // const kandyUserObject = JSON.parse(localKandyUser) 
 
     // initial array of products
     const [products, setProducts] = useState([])
@@ -68,7 +68,6 @@ export const ProductList = () => {
             <h2>List of Products</h2>
 
             {
-            kandyUserObject.staff ?
             <>
             <button onClick={() => {setTopPriced(false)}}>All Products</button>
             <button onClick={() => {setTopPriced(true)}}>Top Priced</button>
@@ -89,7 +88,7 @@ export const ProductList = () => {
         
                     </>
         
-            : ""
+            
         }
 
         </>
