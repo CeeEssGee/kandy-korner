@@ -2,6 +2,8 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import { LocationList } from "../locations/LocationList";
 import { ProductForm } from "../products/ProductForm"
 import { ProductList } from "../products/ProductList";
+import { NewEmployeeForm } from "../employees/NewEmployeeForm";
+import { EmployeeList } from "../employees/EmployeeList";
 
 export const EmployeeViews = () => {
     return (
@@ -17,8 +19,10 @@ export const EmployeeViews = () => {
                 <Route path="locations" element={ <LocationList /> } />
 				<Route path="products" element={ <ProductList /> } />
                 <Route path="product/create" element={ <ProductForm /> } />
-                {/* had to let this LocationForm autocomplete in order to work */}
-                {/* <Route path="location/create" element={ <LocationForm /> } /> */}
+
+                <Route path="employees" element={ <EmployeeList /> } />
+                <Route path="employee/create" element={ <NewEmployeeForm /> } />
+                
 
             </Route>
 
