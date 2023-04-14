@@ -37,15 +37,14 @@ export const CustomerList = () => {
                     (customer) => {
                         return <section key={customer.id} className="customerSection">
                             <header>
-                                <Link to={`/customers/${customer.id}`}>{customer.user.fullName}</Link>
-                                </header>
-
+                                <Link to={`/customers/${customer.id}/edit`}>{customer.user.fullName}</Link>
+                            </header>
                         </section>
                     }
 
 
 
-                 
+
                 )
             }
 
