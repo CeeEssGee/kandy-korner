@@ -214,8 +214,31 @@ EmployeeViews.js
 CustomerEdit.js
         Reformat the JSX 
         Button added
-Customers link shows a list of customer names (hyperlinked)
-When you click on a customer name, it shows the name and email address, and the loyalty number is "editable", but I get an error when trying to edit
+<!-- It works! -->
+
+<!-- Ch 16 -->
+CustomerProduct.js
+        Add a purchase button
+        Bring in the kandy user login info
+        useNavigate()
+        handleSaveButtonClick
+        Create an object to be saved to the API
+
+TODO
+What do we currently have on this component
+        productId
+
+
+Ordering Candy
+In this chapter, you need to allow a customer to purchase candy. Add a "Purchase" button next to each product when it is rendered. When the customer clicks on that button, you need to store a new object with the correct information in the purchases table in your database.
+
+Displaying Orders
+Once you have the objects saving to the database, you need to put a new link in your NavBar component labeled "My Orders". When the user clicks on it, a list of all candies that the user wants to purchase should be listed.
+
+Display the candy name and the price of the candy.
+
+Just get them all listed on the page first, knowing that there will be duplicates if the user clicked on a single candy multiple times.
+
 
 
 
@@ -224,10 +247,9 @@ When you click on a customer name, it shows the name and email address, and the 
 
 
 <!-- QUESTIONS -->
-#21     On ProductForm..js, why does the stuff after productTypes.map((type) => { return need to be within parentheses?
-9.1     How can I make this work if candy is sold at multiple locations?
-Issues with my date on EE Form
-Not working        startDate: new Date().toLocaleString('en-US'), - New EmployeeForm.js
+Ch 16 - ProductForm - navigate("/customer-products") - not working
+
+
 
 <!-- NOTES -->
 
