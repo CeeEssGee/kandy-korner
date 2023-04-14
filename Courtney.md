@@ -180,7 +180,6 @@ The NewEmployeeForm.js needs major tweaking.
         When the employee clicks on a "Customers" navigation link
         Then all customers should be listed with the customer name and email
 Might as well skip and do the next one...
-
 <!-- 2-12-2 Kandy Korner Customers -->
         Given an employee is viewing all customers
         When the employee clicks on the name of a customer
@@ -189,6 +188,38 @@ customers directory
 CustomerList.js
         need to create customers page/route
 CustomerDetails.js
+<!-- It works!!! -->
+
+<!-- Ch 14 - Replace Loyalty Card -->
+<!-- Ch 14 a -->
+        Given a customer needs a new loyalty ID number
+        When an employee views a list of all customers
+        Then the customer name should be a hyperlink that can be clicked on
+<!-- This already works ⬆👆 -->
+
+<!-- Ch 14 b and c-->
+        Given an employee is viewing a list of customers
+        When the employee clicks on a customer name
+        Then a form should appear with a text input field showing the customer's current loyalty ID and a button labeled "Update"
+        Given an employee has changed the value of a customer's loyalty ID in the edit form
+        When the employee clicks the "Update" button
+        Then the new loyalty ID should be saved to the API
+CustomerEdit.js
+        create and export CustomerEdit fx, return fragment
+        I'm going to repurpose CustomerDetails.js for this...
+CustomerList.js
+        Edit the Link to be: {`/customers/${customer.id}/edit`}
+EmployeeViews.js
+        Edit the Route to be CustomerEdit instead of CustomerDetails
+CustomerEdit.js
+        Reformat the JSX 
+        Button added
+Customers link shows a list of customer names (hyperlinked)
+When you click on a customer name, it shows the name and email address, and the loyalty number is "editable", but I get an error when trying to edit
+
+
+
+
 
 
 
