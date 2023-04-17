@@ -235,30 +235,16 @@ Purhcases.css
 
 
 <!-- Ch 18 -->
-
-
+EmployeeList.js
+        create a Fire Employee button
+        fetch delete within the button on-call
+        fx to re-render employee list
+Employees.css
+        Tweak css
+<!-- DONE!!! -->
 
 TODO
-A problem that many retail businesses deal with is employee theft. Over the years, you have discovered that some of your employees eat candy while on the job without paying for it.
-
-When this happens, you need to fire the employee and remove the employee from the database.
-
-Add a button labeled "Fire Employee" to each employee representation.
-When the button is clicked, remove the employee from the database and render the updated list of employees.
-
-
-
-Displaying Orders
-Once you have the objects saving to the database, you need to put a new link in your NavBar component labeled "My Orders". When the user clicks on it, a list of all candies that the user wants to purchase should be listed.
-
-Display the candy name and the price of the candy.
-
-Just get them all listed on the page first, knowing that there will be duplicates if the user clicked on a single candy multiple times.
-
-
-
-
-
+create getAllEmployees() function
 
 
 

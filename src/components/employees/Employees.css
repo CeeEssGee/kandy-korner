@@ -4,3 +4,8 @@
     border: 5px, black, solid;
     padding: 10px;
 }
+
+.employee__delete {
+    background-color: coral;
+    color: black
+}
