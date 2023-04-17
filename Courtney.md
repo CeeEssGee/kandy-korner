@@ -223,14 +223,30 @@ CustomerProduct.js
         useNavigate()
         handleSaveButtonClick
         Create an object to be saved to the API
+CustomerNav.js
+        Add a link for MyOrders
+MyOrders.js
+        Create and export
+CustomerViews.js
+        Add the route
+Purhcases.css
+        make it purty
+<!-- It works! -->
+
+
+<!-- Ch 18 -->
+
+
 
 TODO
-What do we currently have on this component
-        productId
+A problem that many retail businesses deal with is employee theft. Over the years, you have discovered that some of your employees eat candy while on the job without paying for it.
+
+When this happens, you need to fire the employee and remove the employee from the database.
+
+Add a button labeled "Fire Employee" to each employee representation.
+When the button is clicked, remove the employee from the database and render the updated list of employees.
 
 
-Ordering Candy
-In this chapter, you need to allow a customer to purchase candy. Add a "Purchase" button next to each product when it is rendered. When the customer clicks on that button, you need to store a new object with the correct information in the purchases table in your database.
 
 Displaying Orders
 Once you have the objects saving to the database, you need to put a new link in your NavBar component labeled "My Orders". When the user clicks on it, a list of all candies that the user wants to purchase should be listed.
