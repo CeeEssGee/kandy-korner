@@ -214,8 +214,47 @@ EmployeeViews.js
 CustomerEdit.js
         Reformat the JSX 
         Button added
-Customers link shows a list of customer names (hyperlinked)
-When you click on a customer name, it shows the name and email address, and the loyalty number is "editable", but I get an error when trying to edit
+<!-- It works! -->
+
+<!-- Ch 16 -->
+CustomerProduct.js
+        Add a purchase button
+        Bring in the kandy user login info
+        useNavigate()
+        handleSaveButtonClick
+        Create an object to be saved to the API
+CustomerNav.js
+        Add a link for MyOrders
+MyOrders.js
+        Create and export
+CustomerViews.js
+        Add the route
+Purhcases.css
+        make it purty
+<!-- It works! -->
+
+
+<!-- Ch 18 -->
+
+
+
+TODO
+A problem that many retail businesses deal with is employee theft. Over the years, you have discovered that some of your employees eat candy while on the job without paying for it.
+
+When this happens, you need to fire the employee and remove the employee from the database.
+
+Add a button labeled "Fire Employee" to each employee representation.
+When the button is clicked, remove the employee from the database and render the updated list of employees.
+
+
+
+Displaying Orders
+Once you have the objects saving to the database, you need to put a new link in your NavBar component labeled "My Orders". When the user clicks on it, a list of all candies that the user wants to purchase should be listed.
+
+Display the candy name and the price of the candy.
+
+Just get them all listed on the page first, knowing that there will be duplicates if the user clicked on a single candy multiple times.
+
 
 
 
@@ -224,10 +263,9 @@ When you click on a customer name, it shows the name and email address, and the 
 
 
 <!-- QUESTIONS -->
-#21     On ProductForm..js, why does the stuff after productTypes.map((type) => { return need to be within parentheses?
-9.1     How can I make this work if candy is sold at multiple locations?
-Issues with my date on EE Form
-Not working        startDate: new Date().toLocaleString('en-US'), - New EmployeeForm.js
+Ch 16 - ProductForm - navigate("/customer-products") - not working
+
+
 
 <!-- NOTES -->
 

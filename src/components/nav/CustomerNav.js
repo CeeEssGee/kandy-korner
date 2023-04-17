@@ -16,6 +16,9 @@ export const CustomerNav = () => {
     <li className="navbar__item active">
         <Link className="navbar__link" to="/customer-products">Find Candy</Link>
     </li>
+    <li className="navbar__item active">
+        <Link className="navbar__link" to="/customer-orders">My Orders</Link>
+    </li>
 
     {
         localStorage.getItem("kandy_user")

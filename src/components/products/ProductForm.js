@@ -66,7 +66,7 @@ export const ProductForm = () => {
     })
     .then(response => response.json())
     .then(() => {
-        navigate("/products") // where are we sending the user after submitting the ticket, we got this from the application form - rout path: products
+        navigate("/customer-products") // where are we sending the user after submitting the ticket, we got this from the application form - rout path: products
         // <Route path="products" element={ <ProductList /> } />
 
     })
